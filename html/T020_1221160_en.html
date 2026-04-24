@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Request System - ENCS3320</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 style="color: blue;">File Request System</h1>
+            <p class="subtitle">ENCS3320 - Computer Networks Project</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="../html/main_en.html">Home (English)</a>
+            <a href="../html/main_ar.html">Home (Arabic)</a>
+            <a href="../html/T020_1221160_ar.html">العربية</a>
+        </nav>
+
+        <!-- File Request Form -->
+        <section class="form-container">
+            <h2>Request a File</h2>
+            <p>Enter the file name you want to access from our server. The system will check if the file exists and if you have permission to access it.</p>
+            
+            <form action="/file-request" method="GET" id="fileRequestForm">
+                <div class="form-group">
+                    <label for="filename">File Name:</label>
+                    <input type="text" id="filename" name="file" placeholder="Example: notes.txt, report.pdf, image.png" required>
+                </div>
+                
+                <button type="submit" class="btn">Request File</button>
+            </form>
+
+            <!-- Instructions -->
+            <div style="margin-top: 30px; padding: 20px; background: #f8f9ff; border-radius: 10px;">
+                <h3>Instructions:</h3>
+                <ul>
+                    <li><strong>Available files:</strong> Try requesting files like "notes.txt" or "report.pdf" or any other file name</li>
+                    <li><strong>Private files:</strong> Files containing "private" in their name are forbidden</li>
+                    <li><strong>File not found:</strong> Non-existing files will return a 404 error</li>
+                    <li><strong>Success:</strong> Correct files will be served with a 200 OK response</li>
+                </ul>
+            </div>
+
+            <!-- Sample Files -->
+            <div style="margin-top: 20px; padding: 20px; background: #e8f5e8; border-radius: 10px;">
+                <h3>Sample Files for Testing:</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px;">
+                    <a href="../notes.txt" class="btn" style="text-decoration: none; text-align: center;">notes.txt</a>
+                    <a href="../private_doc.txt" class="btn" style="text-decoration: none; text-align: center; background: #dc3545;">private_doc.txt</a>
+                    <a href="../report.pdf" class="btn" style="text-decoration: none; text-align: center; background: #6c757d;">report.pdf</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Information -->
+        <section style="margin-top: 40px; text-align: center; padding: 20px; background: white; border-radius: 15px;">
+            <h3>Project Team T020</h3>
+            <p><strong>Course:</strong> ENCS3320 - Computer Networks</p>
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #eee;">
+            <p>&copy; © 2025 Team T020 – Shahd Raed Shweikiya, Faiza Nidal Al-Zugheer, Dania Abu Ayash</p>
+            <p>Birzeit University - Faculty of Engineering and Technology</p>
+        </footer>
+    </div>
+
+    <script>
+        // Handle form submission to construct proper URL
+        document.getElementById('fileRequestForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const filename = document.getElementById('filename').value.trim();
+            if (filename) {
+                // Redirect to the file path
+                window.location.href = '/html/' + encodeURIComponent(filename);
+            }
+        });
+    </script>
+</body>
+</html>

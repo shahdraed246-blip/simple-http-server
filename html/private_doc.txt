@@ -1,0 +1,4 @@
+
+This file is used for testing the 403 Forbidden response functionality
+of the ENCS3320 web server project.
+

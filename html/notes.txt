@@ -1,0 +1,34 @@
+ENCS3320 - Computer Networks 
+===========================
+Chapter 1: Introduction 
+-------------------------------
+1. What is a Computer Network?
+ A computer network is simply a group of devices that are connected to each other and are able to communicate and share their resources with one another. It allows data to flow between PCs, servers, as well as other network devices. In addition, it allows the sharing of resources like files, printers, and internet connections.
+2. Network Components: 
+ End systems (hosts): computers, smartphones, servers 
+ Communication channels: fiber optic cables, copper wires, radio waves, air 
+ Packet switches: routers and link-layer switches
+3. Protocol Layers:
+ - Application Layer: HTTP, SMTP, FTP
+ - Transport Layer: TCP, UDP
+ - Network Layer: IP
+ - Link Layer: Ethernet, WiFi
+ - Physical Layer: bits transmission
+4. Network Performance Metrics:
+ - Bandwidth: the maximum amount of data that can be sent over a link in one second
+ - Latency: the time it takes for a packet to be sent from the source to the destination
+ - Throughput: the actual data rate that is taken place
+ - Packet loss: the percentage of packets that do not reach the receiving end
+5. Network Types:
+ - LAN (Local Area Network): small geographic area
+ - WAN (Wide Area Network): large geographic area
+ - Internet: global network of networks
+Socket Programming Concepts:
+------------------------------
+- Socket: an interface through which two programs, hardware or software, can communicate with each other.
+- TCP Socket: a medium of communication that is dependable over a connection, between two parties.
+- UDP Socket: a communication channel that is discontinuous and does not provide any assurances. Team T020 - ENCS3320 Project
+
+Student ID: 1221160
+
+Port: 5160

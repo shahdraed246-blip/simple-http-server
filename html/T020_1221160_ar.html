@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام طلب الملفات - ENCS3320</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header: page title and subtitle -->
+        <header class="header">
+            <h1 style="color: blue;">نظام طلب الملفات</h1>
+            <p class="subtitle">ENCS3320 - مشروع شبكات الحاسوب</p>
+        </header>
+
+        <!-- Navigation bar: links to other pages -->
+        <nav class="nav">
+            <a href="../html/main_en.html">الرئيسية (إنجليزي)</a>
+            <a href="../html/main_ar.html">الرئيسية (عربي)</a>
+            <a href="../html/T020_1221160_en.html">English</a>
+        </nav>
+
+        <!-- File request form -->
+        <section class="form-container">
+            <h2>طلب ملف</h2>
+            <p>أدخل اسم الملف الذي تريد الوصول إليه من السيرفر...</p>
+            
+            <form action="/file-request" method="GET" id="fileRequestForm">
+                <div class="form-group">
+                    <label for="filename">اسم الملف:</label>
+                    <input type="text" id="filename" name="file" placeholder="مثال: notes.txt, report.pdf, image.png" required>
+                </div>
+                <button type="submit" class="btn">طلب الملف</button>
+            </form>
+
+            <div style="margin-top: 30px; padding: 20px; background: #f8f9ff; border-radius: 10px;">
+                <h3>التعليمات:</h3>
+                <ul>
+                    <li><strong>الملفات المتاحة:</strong> example files you can try</li>
+                    <li><strong>الملفات الخاصة:</strong> if filename has "private", access is denied</li>
+                    <li><strong>الملف غير موجود:</strong> if file does not exist → error 404</li>
+                    <li><strong>النجاح:</strong> if file exists → it will open with 200 OK</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 20px; padding: 20px; background: #e8f5e8; border-radius: 10px;">
+                <h3>ملفات تجريبية للاختبار:</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px;">
+                    <a href="../notes.txt" class="btn" style="text-decoration: none; text-align: center;">notes.txt</a>
+                    <a href="../private_doc.txt?lang=ar" class="btn" style="text-decoration: none; text-align: center; background: #dc3545;">private_doc.txt</a>
+                    <a href="../report.pdf" class="btn" style="text-decoration: none; text-align: center; background: #6c757d;">report.pdf</a>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 40px; text-align: center; padding: 20px; background: white; border-radius: 15px;">
+            <h3>فريق المشروع T020</h3>
+            <p><strong>المقرر:</strong> ENCS3320 - شبكات الحاسوب</p>
+        </section>
+
+        <footer style="text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #eee;">
+            <p>&copy; © 2025 فريق T020 – شهد رائد شويكية، فايزة نضال الزغير، دانية أبو عياش</p>
+            <p>جامعة بيرزيت - كلية الهندسة والتكنولوجيا</p>
+        </footer>
+    </div>
+
+    <script>
+        // Handle form submission to construct proper URL
+        document.getElementById('fileRequestForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const filename = document.getElementById('filename').value.trim();
+            if (filename) {
+                // Redirect to the file path with lang=ar
+                window.location.href = '/html/' + encodeURIComponent(filename) + '?lang=ar';
+            }
+        });
+    </script>
+</body>
+</html>

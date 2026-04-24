@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خطأ 404</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- This div is the main box for the error page -->
+    <div class="error-container">
+
+        <!-- Big red message to show file not found -->
+        <h1 style="color: red;">الملف غير موجود.</h1>
+
+        <!-- Simple text to explain why the page shows error -->
+        <p>لا يمكن العثور على المورد المطلوب على هذا الخادم.</p>
+        <p>يرجى التحقق من اسم الملف والمحاولة مرة أخرى.</p>
+        
+        <!-- Here the server will add extra info about the client -->
+        <p id="client-info"></p>
+        
+        <!-- Buttons: one goes back home, one tries another file -->
+        <div style="margin-top: 30px;">
+            <a href="../html/main_ar.html" class="btn">العودة للرئيسية</a>
+            <a href="../html/T020_1221160_ar.html" class="btn" style="background: #28a745;">جرب ملف آخر</a>
+        </div>
+        
+        <!-- Footer section: project info and university name -->
+        <footer style="margin-top: 40px; color: #666;">
+            <p>client = 127.0.0.1:5160 </p>
+            <p>ENCS3320 - مشروع شبكات الحاسوب</p>
+            <p> جامعة بيرزيت</p>
+        </footer>
+    </div>
+</body>
+</html>
